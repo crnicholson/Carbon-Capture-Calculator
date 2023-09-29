@@ -1,6 +1,9 @@
 # This calculator is meant for systems that pump air through a capture chamber
 # This measures CO2 based on the difference between the CO2 ppm at the inlet and the outlet, so two sensors are needed at both ends
 # Note that the code might be wrong so use it at your own risk
+# Credits: Charles Nicholson, 2023
+# Licensed under an GNU GPL v3 license, basically means you can do whatever you want
+# My website so you can learn more about this system and usage of this code snippet: https://bit.ly/44Ig0Lz
 
 # Varaibles you can change based off your scrubber:
 inlet = 400 # CO2 ppm at the inlet of your scrubber
