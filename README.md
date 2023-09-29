@@ -10,4 +10,9 @@ There are two different files for the carbon capture calculator. The ```co2Calcu
 4. Look at my code to see if I did anything wrong or if any improvements can be made!
 
 # co2CalculatorPump:
-To configure this snippet to work in a system releasing captured CO2, find this line: ```ppmDifference = inlet - outlet``` and replace it with ```ppmDifference = outlet - inlet```. 
+To configure this snippet to work in a system releasing captured CO2, find this line: ```ppmDifference = inlet - outlet``` and replace it with ```ppmDifference = outlet - inlet```. Then, change the inlet and the outlet variables accordingly.
+
+# co2CalculatorBox:
+To configure this snippet to work in a system measuring a decrease in CO2, find this line: ```ppmRise = ppmEnd - ppmStart``` and replace it with ```ppmRise = ppmStart - ppmEnd```. Then, change the ppmEnd and the ppmStart variables accordingly.
+
+One last note. I tend to get excited and skip over words when I write code or when I write in general, so I'm sorry for any grammatical mistakes.
