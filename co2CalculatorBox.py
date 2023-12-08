@@ -6,12 +6,12 @@
 # My website so you can learn more about this system and usage of this code snippet: https://bit.ly/44Ig0Lz
 
 # Variables you can and should change:
-ppmStart = 400
-ppmEnd = 4000
+ppmStart = 417
+ppmEnd = 540
 boxSize = 18 # in liters
 mpg = 30 # miles per gallon of a car
-capturesPerDay = 24 # 24 captures in 24 hour period
-effciency = 1 # just in case you want to play around and see what happens when you increase the effciency
+capturesPerDay = 5.33 # 24 captures in 24 hour period
+effciency = 50000 # just in case you want to play around and see what happens when you increase the effciency
 carbonFootprint = 16 # average annual metric tons emitted by an American. Find out your own here:
 # https://www.nature.org/en-us/get-involved/how-to-help/carbon-footprint-calculator/
 cost = 150 # the amount of money it cost to make your system. This will be calculated to show how much money is needed for net zero.
@@ -81,7 +81,6 @@ scaledCost = f'{scaledCost:,}'
 scaledMassCost = f'{scaledMassCost:,}'
 machines = f'{machines:,}'
 miles = f'{miles:.9f}'
-treeEfficiency = f'{treeEfficiency:.4f}'
 costEffectivness = f'{costEffectivness:.4f}'
 
 # Printing our results:
@@ -111,8 +110,14 @@ print("Cost of net zero with mass-produced current system: ") # if you had enoug
 print("$" + scaledMassCost)
 print("Which is equal to " + machines + " machines")
 print("------------- Bottom line -------------")
-print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
-print("For carbon neutrality, you would need to spend " + costEffectivness + " times " + placeHolderCost + " money on your machine than using trees")
+if placeHolderEfficiency == "more":
+  treeEfficiency = f'{treeEfficiency:.4f}'
+  print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
+else:
+  treeEfficiency = 1 / treeEfficiency
+  treeEfficiency = f'{treeEfficiency:.4f}'
+  print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
+print("For carbon neutrality, you would need to spend " + costEffectivness + " times " + placeHolderCost + " money on your machine than using trees") # assuming mass prodcution cost
 print("------------- Final word --------------")
 if placeHolderCost == "more":
   print("So in all, trees are more cost effective than your machine, but you should keep trying!")
