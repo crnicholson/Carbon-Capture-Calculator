@@ -81,8 +81,6 @@ scaledCost = f'{scaledCost:,}'
 scaledMassCost = f'{scaledMassCost:,}'
 machines = f'{machines:,}'
 miles = f'{miles:.9f}'
-treeEfficiency = f'{treeEfficiency:.4f}'
-costEffectivness = f'{costEffectivness:.4f}'
 
 # Printing our results:
 print("Grams of CO2 captured in 24 hours: ") # assuming that the machine is running for 24 hours
@@ -111,8 +109,20 @@ print("Cost of net zero with mass-produced current system: ") # if you had enoug
 print("$" + scaledMassCost)
 print("Which is equal to " + machines + " machines")
 print("------------- Bottom line -------------")
-print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
-print("For carbon neutrality, you would need to spend " + costEffectivness + " times " + placeHolderCost + " money on your machine than using trees")
+if placeHolderEfficiency == "more":
+  treeEfficiency = f'{treeEfficiency:.4f}'
+  print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
+else:
+  treeEfficiency = 1 / treeEfficiency
+  treeEfficiency = f'{treeEfficiency:.4f}'
+  print("A tree can remove " + treeEfficiency + " times " + placeHolderEfficiency  + " than your machine")
+if placeHolderCost == "more":
+  costEffectivness = f'{costEffectivness:.4f}'
+  print("For carbon neutrality, you would need to spend " + costEffectivness + " times " + placeHolderCost + " money on your machine than using trees") # assuming mass prodcution cost
+else:
+  costEffectivness = 1 / costEffectivness
+  costEffectivness = f'{costEffectivness:.4f}'
+  print("For carbon neutrality, you would need to spend " + costEffectivness + " times " + placeHolderCost + " money on your machine than using trees") # assuming mass prodcution cost
 print("------------- Final word --------------")
 if placeHolderCost == "more":
   print("So in all, trees are more cost effective than your machine, but you should keep trying!")
